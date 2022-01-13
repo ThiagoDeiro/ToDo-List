@@ -39,19 +39,35 @@ function renderData() {
 
       let deleteButton = document.createElement("BUTTON");
       deleteButton.setAttribute("onclick", `deletToDo(${ind})`);
+      deleteButton.setAttribute("id", `deleteButton`);
       deleteButton.innerHTML = "Delete";
 
       let editButton = document.createElement("BUTTON");
       editButton.setAttribute("onclick", `editToDo(${ind})`);
+      editButton.setAttribute("id", `editButton`);
       editButton.innerHTML = "Edit";
 
       let span = document.createElement("span");
       span.setAttribute("id", "spanContainer");
 
-      span.appendChild(checkbox);
-      span.appendChild(li);
-      span.appendChild(editButton);
-      span.appendChild(deleteButton);
+      let spanFor = document.createElement("span");
+      spanFor.setAttribute("id", "spanMainEl");
+
+      let spanForButton = document.createElement("span");
+      spanForButton.setAttribute("id", "spanForButton");
+
+      spanFor.appendChild(checkbox);
+      spanFor.appendChild(li);
+
+      spanForButton.appendChild(editButton);
+      spanForButton.appendChild(deleteButton);
+
+      span.appendChild(spanFor);
+      span.appendChild(spanForButton);
+      // span.appendChild(checkbox);
+      // span.appendChild(li);
+      // span.appendChild(editButton);
+      // span.appendChild(deleteButton);
       ul.appendChild(span);
     }
   }
