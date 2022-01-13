@@ -58,9 +58,19 @@ body {
 #spanMainEl {
   display: flex;
   flex-direction: row;
+  padding-left: 3px;
 }
 
 #spanForButton {
   display: flex;
   flex-direction: row;
+}
+
+input[type="checkbox"] {
+  width: 1.4em;
+  height: 1.4em;
+  border: 1px solid #aaa;
+}
+
+input[type="checkbox"]:checked {
 }

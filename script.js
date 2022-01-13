@@ -32,6 +32,7 @@ function renderData() {
       checkbox.addEventListener("change", function () {
         if (this.checked) {
           li.style.textDecoration = "line-through";
+          // checkbox.style.background = "black";
         } else {
           li.style.textDecoration = "none";
         }
