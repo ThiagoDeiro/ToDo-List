@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,500&family=Orelega+One&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <title>Document</title>
+</head>
+<body>
+    <div class="parentContainer">
+        <div class="titleContainer">
+            <h1>ToDo List</h1>
+        </div>
+        <div class="mainContainer">
+            <input type="text" placeholder="Add item..." id="inputField" class="inputField">
+            <div id='addButtonContainer'>
+                <button id='addNewToDo' onclick="addNewToDo()">Add ToDo</button>
+                <button id='saveNewTask' style="display: none;" onclick='replaceToDo()' >Save</button>
+            </div>
+            <div class="listContainer">
+                <ul id='toDoListParent'>
+                </ul>
+            </div>
+        </div>
+    </div> 
+  <script src="script.js"></script>
+</body>
+
+</html>
