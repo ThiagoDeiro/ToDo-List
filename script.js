@@ -9,7 +9,6 @@ function createId() {
 
 function renderData() {
   ul.innerHTML = "";
-
   let taskContent;
   let ind;
   let isChecked = false;

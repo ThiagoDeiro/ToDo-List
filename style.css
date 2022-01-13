@@ -1,54 +1,56 @@
-/* Gabriel task: organizer o CSS */
+/* Gabriel task: 
+- Adicionar os icons para adicionar, deletar e editar
+-ler sobre Flex-box e me dizer oq entendeu
+- Organizer o CSS 
+*/
 body {
-    font-family: "Lora", serif;
-    /* font-family: "Orelega One", cursive; */
-  }
-  .parentContainer {
-    display: flex;
-    height: 100vh;
-    flex-direction: column;
-    align-items: center;
-    /* justify-content: center; */
-  }
-  .mainContainer {
-    text-align: center;
-    margin-top: 40px;
-    font-size: 18px;
-  }
-  .inputField {
-    border-top-style: hidden;
-    border-right-style: hidden;
-    border-left-style: hidden;
-    border-bottom-style: groove;
-    width: 15vw;
-    font-size: 18px;
-  }
-  #inputField:focus {
-    outline: none;
-  }
-  
-  .titleContainer {
-    text-align: center;
-    font-size: 30px;
-    font-weight: 600;
-  }
-  
-  #addButtonContainer {
-    display: inline-block;
-  }
-  
-  #toDoListParent {
-    display: flex;
-    flex-direction: column;
-    list-style-type: none;
-  }
-  #spanContainer {
-    display: flex;
-    /* width: 00px; */
-    padding: 4px;
-    justify-content: flex-start;
-    min-width: 20vw;
-    border-bottom: 1px solid black;
-    margin-top: 10px;
-  }
-  
+  font-family: "Lora", serif;
+  /* font-family: "Orelega One", cursive; */
+}
+.parentContainer {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
+}
+.mainContainer {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 18px;
+}
+.inputField {
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: groove;
+  width: 15vw;
+  font-size: 18px;
+}
+#inputField:focus {
+  outline: none;
+}
+.titleContainer {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+#addButtonContainer {
+  display: inline-block;
+}
+
+#toDoListParent {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+}
+#spanContainer {
+  display: flex;
+  /* width: 00px; */
+  padding: 4px;
+  justify-content: flex-start;
+  min-width: 20vw;
+  border-bottom: 1px solid black;
+  margin-top: 10px;
+}
