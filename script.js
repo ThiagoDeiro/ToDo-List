@@ -11,7 +11,6 @@ function renderData() {
   ul.innerHTML = "";
   let taskContent;
   let ind;
-  let isChecked = false;
   if (toDos.length === 0) {
     let h2 = document.createElement("h2");
     h2.innerHTML = "You're up-to-date";
@@ -32,21 +31,20 @@ function renderData() {
       checkbox.addEventListener("change", function () {
         if (this.checked) {
           li.style.textDecoration = "line-through";
-          // checkbox.style.background = "black";
         } else {
           li.style.textDecoration = "none";
         }
       });
 
-      let deleteButton = document.createElement("BUTTON");
+      let deleteButton = document.createElement("a");
       deleteButton.setAttribute("onclick", `deletToDo(${ind})`);
       deleteButton.setAttribute("id", `deleteButton`);
-      deleteButton.innerHTML = "Delete";
+      deleteButton.innerHTML = `<i class="fas fa-trash-alt"></i>`;
 
-      let editButton = document.createElement("BUTTON");
+      let editButton = document.createElement("a");
       editButton.setAttribute("onclick", `editToDo(${ind})`);
       editButton.setAttribute("id", `editButton`);
-      editButton.innerHTML = "Edit";
+      editButton.innerHTML = `<i class="fas fa-edit"></i>`;
 
       let span = document.createElement("span");
       span.setAttribute("id", "spanContainer");
@@ -62,13 +60,8 @@ function renderData() {
 
       spanForButton.appendChild(editButton);
       spanForButton.appendChild(deleteButton);
-
       span.appendChild(spanFor);
       span.appendChild(spanForButton);
-      // span.appendChild(checkbox);
-      // span.appendChild(li);
-      // span.appendChild(editButton);
-      // span.appendChild(deleteButton);
       ul.appendChild(span);
     }
   }

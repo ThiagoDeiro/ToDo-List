@@ -5,14 +5,28 @@
 */
 body {
   font-family: "Lora", serif;
-  /* font-family: "Orelega One", cursive; */
+  background-color: #fefefe;
+  background-image: linear-gradient(#fc6c48 0%, #ef5081 100%);
 }
 .parentContainer {
   display: flex;
   height: 100vh;
   flex-direction: column;
   align-items: center;
+
   /* justify-content: center; */
+}
+.parentContainer__position {
+  border: 1px solid rgb(255, 255, 255, 0.05);
+  border-radius: 10px;
+  width: 27vw;
+  min-height: 62vh;
+  max-height: 100vh;
+  -webkit-box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.05);
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.05);
+  background-color: rgb(247, 247, 247);
+  /* overflow-y: scroll;
+  overflow-y: thin; */
 }
 .mainContainer {
   text-align: center;
@@ -24,8 +38,9 @@ body {
   border-right-style: hidden;
   border-left-style: hidden;
   border-bottom-style: groove;
-  width: 15vw;
+  width: 20vw;
   font-size: 18px;
+  background-color: rgb(247, 247, 247);
 }
 #inputField:focus {
   outline: none;
@@ -43,29 +58,45 @@ body {
 #toDoListParent {
   display: flex;
   flex-direction: column;
+  align-items: center;
   list-style-type: none;
+  padding: 0 5px 5px 5px;
 }
 #spanContainer {
   display: flex;
-  /* width: 00px; */
+  width: 80%;
   flex-direction: row;
-  padding: 4px;
   justify-content: space-between;
-  min-width: 20vw;
-  border-bottom: 1px solid black;
+  min-width: 95%;
+  border: 0.5px solid rgba(159, 159, 159, 0.688);
+  background: #f3f6fb;
+  border-radius: 5px;
   margin-top: 10px;
+  padding: 10px;
 }
 #spanMainEl {
   display: flex;
   flex-direction: row;
-  padding-left: 3px;
 }
 
 #spanForButton {
   display: flex;
   flex-direction: row;
 }
-
+#editButton {
+  padding-right: 10px;
+}
+.fas:hover {
+  cursor: pointer;
+  font-size: 19px;
+}
+.far {
+  font-size: 19px;
+}
+.far:hover {
+  cursor: pointer;
+  font-size: 22px;
+}
 input[type="checkbox"] {
   width: 1.4em;
   height: 1.4em;
@@ -73,4 +104,5 @@ input[type="checkbox"] {
 }
 
 input[type="checkbox"]:checked {
+  color: #888;
 }

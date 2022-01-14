@@ -8,26 +8,30 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,500&family=Orelega+One&display=swap" rel="stylesheet">
-
+    <script src="https://use.fontawesome.com/6e4cca0ad2.js"></script>
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/c5a470c8a4.js" crossorigin="anonymous"></script>
+
 
     <title>ToDo-List</title>
 </head>
 
 <body>
     <div class="parentContainer">
-        <div class="titleContainer">
-            <h1>ToDo List</h1>
-        </div>
-        <div class="mainContainer">
-            <input type="text" placeholder="Add item..." id="inputField" class="inputField">
-            <div id='addButtonContainer'>
-                <button id='addNewToDo' onclick="addNewToDo()">Add ToDo</button>
-                <button id='saveNewTask' style="display: none;" onclick='replaceToDo()'>Save</button>
+        <div class="parentContainer__position">
+            <div class="titleContainer">
+                <h1>ToDo List</h1>
             </div>
-            <div class="listContainer">
-                <ul id='toDoListParent'>
-                </ul>
+            <div class="mainContainer">
+                <input type="text" placeholder="Add item..." id="inputField" class="inputField">
+                <div id='addButtonContainer'>
+                    <a id='addNewToDo' onclick="addNewToDo()"><i class="fas fa-plus"></i></a>
+                    <a id='saveNewTask' style="display: none;" onclick='replaceToDo()'><i class="far fa-check-square"></i></a>
+                </div>
+                <div class="listContainer">
+                    <ul id='toDoListParent'>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
