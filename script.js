@@ -11,6 +11,7 @@ function renderData() {
   ul.innerHTML = "";
   let taskContent;
   let ind;
+
   if (toDos.length === 0) {
     let h2 = document.createElement("h2");
     h2.innerHTML = "You're up-to-date";
