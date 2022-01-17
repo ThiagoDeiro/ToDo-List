@@ -7,6 +7,18 @@ function createId() {
   return Math.random().toString(36).substring(2, 9);
 }
 
+function date() {
+  let div = document.getElementById("dateContainer");
+  let span = document.getElementById("date");
+  var today = new Date();
+
+  var date =
+    today.getDate() + "-" + (today.getMonth() + 1) + "-" + today.getFullYear();
+  span.innerHTML = date;
+  div.appendChild(span);
+}
+date();
+
 function renderData() {
   ul.innerHTML = "";
   let taskContent;
