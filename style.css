@@ -1,108 +1,144 @@
 /* Gabriel task: 
-- Adicionar os icons para adicionar, deletar e editar
--ler sobre Flex-box e me dizer oq entendeu
-- Organizer o CSS 
+-ler sobre Flex-box e me dizer oq entendeu: Done
+-Organizer o CSS: de acordo com o html file. Ex: ul eh parent da li: done
+-Responsiveness da pagina: done
+-Arrumar text box, "linha dupla": done. 
+ps: #spancontainer adicionei overflow-wrap: anywhere;
+-Arrumar checkbox all of the same size: 0;
+-Arrumar checkbox quando submitting items: 
+-Adicionar trash button para recuperar history- Thiago e Gabriel
 */
-body {
-  font-family: "Lora", serif;
-  background-color: #fefefe;
-  background-image: linear-gradient(#fc6c48 0%, #ef5081 100%);
-}
-.parentContainer {
-  display: flex;
-  height: 100vh;
-  flex-direction: column;
-  align-items: center;
 
-  /* justify-content: center; */
+body {
+    font-family: "Lora", serif;
+    background-color: #fefefe;
+    background-image: linear-gradient(#fc6c48 0%, #ef5081 100%);
 }
+
+.parentContainer {
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+}
+
 .parentContainer__position {
-  border: 1px solid rgb(255, 255, 255, 0.05);
-  border-radius: 10px;
-  width: 27vw;
-  min-height: 62vh;
-  max-height: 100vh;
-  -webkit-box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.05);
-  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.05);
-  background-color: rgb(247, 247, 247);
-  /* overflow-y: scroll;
+    border: 1px solid rgb(255, 255, 255, 0.05);
+    border-radius: 10px;
+    width: 30vw;
+    min-height: 62vh;
+    max-height: 100vh;
+    -webkit-box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.05);
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.05);
+    background-color: rgb(247, 247, 247);
+    overflow-y: auto;
+    /* overflow-y: scroll;
   overflow-y: thin; */
 }
-.mainContainer {
-  text-align: center;
-  margin-top: 40px;
-  font-size: 18px;
-}
-.inputField {
-  border-top-style: hidden;
-  border-right-style: hidden;
-  border-left-style: hidden;
-  border-bottom-style: groove;
-  width: 20vw;
-  font-size: 18px;
-  background-color: rgb(247, 247, 247);
-}
-#inputField:focus {
-  outline: none;
-}
+
 .titleContainer {
-  text-align: center;
-  font-size: 30px;
-  font-weight: 600;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.currentDate {
+    padding: 40px 215px 0 0;
+    font-size: 12px;
+    color: #757589;
+}
+
+.mainContainer {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 18px;
+}
+
+.inputField {
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: groove;
+    width: 20vw;
+    font-size: 18px;
+    background-color: rgb(247, 247, 247);
+}
+
+#inputField:focus {
+    outline: none;
 }
 
 #addButtonContainer {
-  display: inline-block;
+    display: inline-block;
+}
+
+.fas:hover {
+    font-size: 19px;
 }
 
 #toDoListParent {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  list-style-type: none;
-  padding: 0 5px 5px 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style-type: none;
+    padding: 0 5px 5px 5px;
 }
+
+.far {
+    font-size: 19px;
+}
+
+.far:hover {
+    cursor: pointer;
+    font-size: 22px;
+}
+
 #spanContainer {
-  display: flex;
-  width: 80%;
-  flex-direction: row;
-  justify-content: space-between;
-  min-width: 95%;
-  border: 0.5px solid rgba(159, 159, 159, 0.688);
-  background: #f3f6fb;
-  border-radius: 5px;
-  margin-top: 10px;
-  padding: 10px;
+    display: flex;
+    width: 80%;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 100%;
+    min-width: 95%;
+    border: 0.5px solid rgba(159, 159, 159, 0.688);
+    background: #f3f6fb;
+    border-radius: 5px;
+    margin-top: 10px;
+    padding: 10px;
+    overflow-wrap: anywhere;
 }
+
 #spanMainEl {
-  display: flex;
-  flex-direction: row;
+    display: flex;
+    flex-direction: row;
 }
 
 #spanForButton {
-  display: flex;
-  flex-direction: row;
+    display: flex;
+    flex-direction: row;
 }
+
 #editButton {
-  padding-right: 10px;
+    padding-right: 10px;
 }
-.fas:hover {
-  cursor: pointer;
-  font-size: 19px;
+
+#clearButton {
+    padding-bottom: 20px;
 }
-.far {
-  font-size: 19px;
-}
-.far:hover {
-  cursor: pointer;
-  font-size: 22px;
-}
+
 input[type="checkbox"] {
-  width: 1.4em;
-  height: 1.4em;
-  border: 1px solid #aaa;
+    width: 1.4em;
+    height: 1.4em;
+    border: 1px solid #aaa;
+    flex-shrink: 0;
 }
 
 input[type="checkbox"]:checked {
-  color: #888;
+    color: #888;
+}
+
+#clearAll {
+    cursor: pointer;
+    font-size: 22px;
 }

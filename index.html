@@ -17,10 +17,16 @@
 </head>
 
 <body>
+
     <div class="parentContainer">
         <div class="parentContainer__position">
             <div class="titleContainer">
-                <h1>ToDo List</h1>
+                <h1>To Do List</h1>
+                <p class="currentDate">
+                    <script>
+                        document.write(new Date().toLocaleDateString());
+                    </script>
+                </p>
             </div>
             <div class="mainContainer">
                 <input type="text" placeholder="Add item..." id="inputField" class="inputField">
@@ -28,14 +34,16 @@
                     <a id='addNewToDo' onclick="addNewToDo()"><i class="fas fa-plus"></i></a>
                     <a id='saveNewTask' style="display: none;" onclick='replaceToDo()'><i class="far fa-check-square"></i></a>
                 </div>
-                <div class="listContainer">
+
+                <div class="listContainer ">
                     <ul id='toDoListParent'>
                     </ul>
+                    <span id='clearAll' onclick="clearAll()"><i class="fas fa-backspace"></i></span>
                 </div>
             </div>
         </div>
     </div>
-    <script src="script.js"></script>
+    <script src="script.js "></script>
 </body>
 
 </html>
