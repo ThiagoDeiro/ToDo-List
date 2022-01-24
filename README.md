@@ -15,7 +15,6 @@ For those who are new users of the app, find some instructions below:
 *Once your item is added to the list, you have 3 options: mark the task as done, edit it or delete it. 
 *At the bottom of list, there are 2 additional buttons: clear all and history.
 *Clear all button: once you are finalised, this button will clear all your tasks, without the need of selecting them individually. 
-*History button: this is where the users can find tasks that were cleared from the list. 
 *Once all your tasks are done, a "you are up to date message" should be displayed. 
 
 ## Screenshots:

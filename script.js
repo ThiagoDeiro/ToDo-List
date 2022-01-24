@@ -8,14 +8,14 @@ function createId() {
 }
 
 function date() {
-  let div = document.getElementById("dateContainer");
-  let span = document.getElementById("date");
-  var today = new Date();
+    let div = document.getElementById("dateContainer");
+    let span = document.getElementById("date");
+    var today = new Date();
 
-  var date =
-    today.getDate() + "-" + (today.getMonth() + 1) + "-" + today.getFullYear();
-  span.innerHTML = date;
-  div.appendChild(span);
+    var date =
+        today.getDate() + "-" + (today.getMonth() + 1) + "-" + today.getFullYear();
+    span.innerHTML = date;
+    div.appendChild(span);
 }
 date();
 
@@ -59,10 +59,6 @@ function renderData() {
             editButton.setAttribute("id", `editButton`);
             editButton.innerHTML = `<i class="fas fa-edit"></i>`;
 
-            /*let clearButton = document.createElement("a");
-            clearButton.setAttribute("onclick", `clearAll(${ind})`);
-            clearButton.setAttribute("id", `clearButton`);
-            clearButton.innerHTML = "Clear All";*/
 
             let span = document.createElement("span");
             span.setAttribute("id", "spanContainer");
@@ -123,6 +119,7 @@ function editToDo(ind) {
     saveButton.style.display = "inline-block";
 
     saveButton.setAttribute("onclick", `replaceToDo(${ind})`);
+
 }
 
 function replaceToDo(ind) {

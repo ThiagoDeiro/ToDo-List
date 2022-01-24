@@ -44,7 +44,6 @@ body {
 }
 
 .currentDate {
-    padding: 40px 215px 0 0;
     font-size: 12px;
     color: #757589;
 }
@@ -123,10 +122,6 @@ body {
     padding-right: 10px;
 }
 
-#clearButton {
-    padding-bottom: 20px;
-}
-
 input[type="checkbox"] {
     width: 1.4em;
     height: 1.4em;
@@ -141,4 +136,36 @@ input[type="checkbox"]:checked {
 #clearAll {
     cursor: pointer;
     font-size: 22px;
+}
+
+@media all and (max-width: 800px) {
+    .parentContainer__position {
+        border: 1px solid rgb(255, 255, 255, 0.05);
+        border-radius: 10px;
+        width: 30vw;
+        min-height: 62vh;
+        max-height: 100vh;
+        -webkit-box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.05);
+        box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.05);
+        background-color: rgb(247, 247, 247);
+        overflow-y: auto;
+        /* overflow-y: scroll;
+      overflow-y: thin; */
+    }
+}
+
+@media all and (max-width: 500px) {
+    .parentContainer__position {
+        border: 1px solid rgb(255, 255, 255, 0.05);
+        border-radius: 10px;
+        width: 30vw;
+        min-height: 62vh;
+        max-height: 100vh;
+        -webkit-box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.05);
+        box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.05);
+        background-color: rgb(247, 247, 247);
+        overflow-y: auto;
+        /* overflow-y: scroll;
+      overflow-y: thin; */
+    }
 }
