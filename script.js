@@ -17,7 +17,6 @@ function date() {
     span.innerHTML = date;
     div.appendChild(span);
 }
-date();
 
 function renderData() {
     ul.innerHTML = "";
@@ -29,13 +28,13 @@ function renderData() {
         h2.innerHTML = "You're up-to-date";
         ul.appendChild(h2);
     } else {
-        // ToDo.lenght= 10
         for (let i = 0; i < toDos.length; i++) {
             taskContent = toDos[i].Content;
             ind = [i];
 
             let li = document.createElement("li");
-            li.setAttribute("id", "todoElement");
+            li.setAttribute("id", `${ind}`);
+            li.setAttribute("class", "todoElement");
             li.innerHTML = taskContent;
 
             let checkbox = document.createElement("input");
@@ -44,11 +43,17 @@ function renderData() {
             checkbox.addEventListener("change", function() {
                 if (this.checked) {
                     li.style.textDecoration = "line-through";
+                    toDos[ind].Checkbox = true;
+                    saveToStorage();
+                    console.log(ind);
+                    console.log(toDos);
                 } else {
                     li.style.textDecoration = "none";
+                    toDos[ind].Checkbox = false;
+                    saveToStorage();
+                    console.log(toDos);
                 }
             });
-
             let deleteButton = document.createElement("a");
             deleteButton.setAttribute("onclick", `deletToDo(${ind})`);
             deleteButton.setAttribute("id", `deleteButton`);
@@ -58,7 +63,6 @@ function renderData() {
             editButton.setAttribute("onclick", `editToDo(${ind})`);
             editButton.setAttribute("id", `editButton`);
             editButton.innerHTML = `<i class="fas fa-edit"></i>`;
-
 
             let span = document.createElement("span");
             span.setAttribute("id", "spanContainer");
@@ -87,6 +91,7 @@ function addNewToDo() {
     let dataFormat = {
         Content: inputValue,
         id: createId(),
+        Checkbox: false,
     };
 
     if (inputValue !== "") {
@@ -98,19 +103,25 @@ function addNewToDo() {
     } else {
         alert("Input must be filled");
     }
-    console.log(localStorage);
 }
 
 function deletToDo(ind) {
     toDos.splice(ind, 1);
+    inputField.value = "";
+
+    // show the right button when editing ToDo and then deleting it!
+    let mainButton = document.getElementById("addNewToDo");
+    mainButton.style.display = "inline-block";
+
+    let saveButton = document.getElementById("saveNewTask");
+    saveButton.style.display = "none";
     renderData();
     saveToStorage();
 }
 
 function editToDo(ind) {
-    // * todos[2].id
     let toDoText = toDos[ind].Content; // toDoText = fazer compras;
-    inputField.value = toDoText; //Input field => toDotext
+    inputField.value = toDoText;
 
     let mainButton = document.getElementById("addNewToDo");
     mainButton.style.display = "none";
@@ -119,7 +130,6 @@ function editToDo(ind) {
     saveButton.style.display = "inline-block";
 
     saveButton.setAttribute("onclick", `replaceToDo(${ind})`);
-
 }
 
 function replaceToDo(ind) {
@@ -146,12 +156,16 @@ function clearAll() {
     toDos.length = 0;
     saveToStorage();
     renderData();
-    if (toDos.length === 0) {
-        console.log(localStorage);
-    }
 
+    inputField.value = "";
+
+    // show the right button when editing ToDo and then deleting it!
+    let mainButton = document.getElementById("addNewToDo");
+    mainButton.style.display = "inline-block";
+
+    let saveButton = document.getElementById("saveNewTask");
+    saveButton.style.display = "none";
 }
-
 
 function saveToStorage() {
     localStorage.setItem("Content", JSON.stringify(toDos));

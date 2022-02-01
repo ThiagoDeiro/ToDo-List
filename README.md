@@ -24,5 +24,5 @@ For those who are new users of the app, find some instructions below:
 # Technology stack:
 *HTML
 *CSS 
-*Java Script
+*Javascript
 
