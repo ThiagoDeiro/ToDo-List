@@ -1,391 +1,178 @@
-/* Gabriel task: 
--ler sobre Flex-box e me dizer oq entendeu: Done
--Organizer o CSS: de acordo com o html file. Ex: ul eh parent da li: done
--Responsiveness da pagina: done
--Arrumar text box, "linha dupla": done. 
-ps: #spancontainer adicionei overflow-wrap: anywhere;
--Arrumar checkbox all of the same size: 0;
--Arrumar checkbox quando submitting items: 
--Adicionar trash button para recuperar history- Thiago e Gabriel
-*/
-
-body {
-    font-family: "Lora", serif;
-    background-color: #fefefe;
-    background-image: linear-gradient(#fc6c48 0%, #ef5081 100%);
-}
-
-.parentContainer {
-    display: flex;
-    height: 100vh;
-    flex-direction: column;
-    align-items: center;
-    /* justify-content: center; */
-}
-
-.parentContainer__position {
-    border: 1px solid rgb(255, 255, 255, 0.05);
-    border-radius: 10px;
-    width: 30vw;
-    min-height: 62vh;
-    max-height: 100vh;
-    -webkit-box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.05);
-    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.05);
-    background-color: rgb(247, 247, 247);
-    overflow-y: auto;
-    /* overflow-y: scroll;
+                                                                                            body {
+                                                                                            font-family: "Lora", serif;
+                                                                                            background-color: #fefefe;
+                                                                                            background-image: linear-gradient(#fc6c48 0%, #ef5081 100%);
+                                                                                        }
+                                                                                        
+                                                                                        .parentContainer {
+                                                                                            display: flex;
+                                                                                            height: 100vh;
+                                                                                            flex-direction: column;
+                                                                                            align-items: center;
+                                                                                            /* justify-content: center; */
+                                                                                        }
+                                                                                        
+                                                                                        .parentContainer__position {
+                                                                                            border: 1px solid rgb(255, 255, 255, 0.05);
+                                                                                            border-radius: 10px;
+                                                                                            width: 30vw;
+                                                                                            min-height: 62vh;
+                                                                                            max-height: 100vh;
+                                                                                            -webkit-box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.05);
+                                                                                            box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.05);
+                                                                                            background-color: rgb(247, 247, 247);
+                                                                                            overflow-y: auto;
+                                                                                            /* overflow-y: scroll;
   overflow-y: thin; */
-}
-
-.titleContainer {
-    text-align: center;
-    font-size: 30px;
-    font-weight: 600;
-}
-
-.currentDate {
-    font-size: 12px;
-    color: #757589;
-    /* padding: 40px 215px 0 0; */
-    font-size: 12px;
-    color: #757589;
-}
-
-.mainContainer {
-    text-align: center;
-    margin-top: 40px;
-    font-size: 18px;
-}
-
-.inputField {
-    border-top-style: hidden;
-    border-right-style: hidden;
-    border-left-style: hidden;
-    border-bottom-style: groove;
-    width: 20vw;
-    font-size: 18px;
-    background-color: rgb(247, 247, 247);
-}
-
-#inputField:focus {
-    outline: none;
-}
-
-#addButtonContainer {
-    display: inline-block;
-}
-
-.fas:hover {
-    font-size: 19px;
-}
-
-#toDoListParent {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    list-style-type: none;
-    padding: 0 5px 5px 5px;
-}
-
-.far {
-    font-size: 19px;
-}
-
-.far:hover {
-    cursor: pointer;
-    font-size: 22px;
-}
-
-#spanContainer {
-    display: flex;
-    width: 80%;
-    flex-direction: row;
-    justify-content: space-between;
-    max-width: 100%;
-    min-width: 95%;
-    border: 0.5px solid rgba(159, 159, 159, 0.688);
-    background: #f3f6fb;
-    border-radius: 5px;
-    margin-top: 10px;
-    padding: 10px;
-    overflow-wrap: anywhere;
-}
-
-#spanMainEl {
-    display: flex;
-    flex-direction: row;
-}
-
-#spanForButton {
-    display: flex;
-    flex-direction: row;
-}
-
-#editButton {
-    padding-right: 10px;
-}
-
-#clearButton {
-    padding-bottom: 20px;
-}
-
-input[type="checkbox"] {
-    width: 1.4em;
-    height: 1.4em;
-    border: 1px solid #aaa;
-    flex-shrink: 0;
-}
-
-input[type="checkbox"]:checked {
-    color: #888;
-}
-
-#clearAll {
-    cursor: pointer;
-    font-size: 22px;
-}
-
-
-/*Mobile*/
-
-@media (min-width:320px) {
-    body {
-        font-family: "Lora", serif;
-        background-color: #fefefe;
-        background-image: linear-gradient(#fc6c48 0%, #ef5081 100%);
-    }
-    .parentContainer {
-        display: flex;
-        height: 100vh;
-        flex-direction: column;
-        align-items: center;
-        /* justify-content: center; */
-    }
-    .parentContainer__position {
-        border: 1px solid rgb(255, 255, 255, 0.05);
-        border-radius: 10px;
-        width: 80vw;
-        min-height: 76vh;
-        max-height: 100vh;
-        -webkit-box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.05);
-        box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.05);
-        background-color: rgb(247, 247, 247);
-        overflow-y: auto;
-        /* overflow-y: scroll;
+                                                                                        }
+                                                                                        
+                                                                                        .titleContainer {
+                                                                                            text-align: center;
+                                                                                            font-size: 30px;
+                                                                                            font-weight: 600;
+                                                                                        }
+                                                                                        
+                                                                                        .currentDate {
+                                                                                            font-size: 12px;
+                                                                                            color: #757589;
+                                                                                            /* padding: 40px 215px 0 0; */
+                                                                                            font-size: 12px;
+                                                                                            color: #757589;
+                                                                                        }
+                                                                                        
+                                                                                        .mainContainer {
+                                                                                            text-align: center;
+                                                                                            margin-top: 40px;
+                                                                                            font-size: 18px;
+                                                                                        }
+                                                                                        
+                                                                                        .inputField {
+                                                                                            border-top-style: hidden;
+                                                                                            border-right-style: hidden;
+                                                                                            border-left-style: hidden;
+                                                                                            border-bottom-style: groove;
+                                                                                            width: 20vw;
+                                                                                            font-size: 18px;
+                                                                                            background-color: rgb(247, 247, 247);
+                                                                                        }
+                                                                                        
+                                                                                        #inputField:focus {
+                                                                                            outline: none;
+                                                                                        }
+                                                                                        
+                                                                                        #addButtonContainer {
+                                                                                            display: inline-block;
+                                                                                        }
+                                                                                        
+                                                                                        .fas:hover {
+                                                                                            font-size: 19px;
+                                                                                        }
+                                                                                        
+                                                                                        #toDoListParent {
+                                                                                            display: flex;
+                                                                                            flex-direction: column;
+                                                                                            align-items: center;
+                                                                                            list-style-type: none;
+                                                                                            padding: 0 5px 5px 5px;
+                                                                                        }
+                                                                                        
+                                                                                        .far {
+                                                                                            font-size: 19px;
+                                                                                        }
+                                                                                        
+                                                                                        .far:hover {
+                                                                                            cursor: pointer;
+                                                                                            font-size: 22px;
+                                                                                        }
+                                                                                        
+                                                                                        #spanContainer {
+                                                                                            display: flex;
+                                                                                            width: 80%;
+                                                                                            flex-direction: row;
+                                                                                            justify-content: space-between;
+                                                                                            max-width: 100%;
+                                                                                            min-width: 95%;
+                                                                                            border: 0.5px solid rgba(159, 159, 159, 0.688);
+                                                                                            background: #f3f6fb;
+                                                                                            border-radius: 5px;
+                                                                                            margin-top: 10px;
+                                                                                            padding: 10px;
+                                                                                            overflow-wrap: anywhere;
+                                                                                        }
+                                                                                        
+                                                                                        #spanMainEl {
+                                                                                            display: flex;
+                                                                                            flex-direction: row;
+                                                                                        }
+                                                                                        
+                                                                                        #spanForButton {
+                                                                                            display: flex;
+                                                                                            flex-direction: row;
+                                                                                        }
+                                                                                        
+                                                                                        #editButton {
+                                                                                            padding-right: 10px;
+                                                                                        }
+                                                                                        
+                                                                                        #clearButton {
+                                                                                            padding-bottom: 20px;
+                                                                                        }
+                                                                                        
+                                                                                        input[type="checkbox"] {
+                                                                                            width: 1.4em;
+                                                                                            height: 1.4em;
+                                                                                            border: 1px solid #aaa;
+                                                                                            flex-shrink: 0;
+                                                                                        }
+                                                                                        
+                                                                                        input[type="checkbox"]:checked {
+                                                                                            color: #888;
+                                                                                        }
+                                                                                        
+                                                                                        #clearAll {
+                                                                                            cursor: pointer;
+                                                                                            font-size: 22px;
+                                                                                        }
+                                                                                        
+                                                                                        .textClearAll {
+                                                                                            margin-top: -5px;
+                                                                                            color: #757589;
+                                                                                        }
+                                                                                        /*Mobile*/
+                                                                                        
+                                                                                        @media (min-width:320px) {
+                                                                                            .parentContainer__position {
+                                                                                                width: 80vw;
+                                                                                                min-height: 76vh;
+                                                                                                max-height: 100vh;
+                                                                                                /* overflow-y: scroll;
       overflow-y: thin; */
-    }
-    .titleContainer {
-        text-align: center;
-        font-size: 20px;
-        font-weight: 600;
-    }
-    .currentDate {
-        font-size: 12px;
-        color: #757589;
-        /* padding: 40px 215px 0 0; */
-        font-size: 12px;
-        color: #757589;
-    }
-    .mainContainer {
-        text-align: center;
-        margin-top: 40px;
-        font-size: 18px;
-    }
-    .inputField {
-        border-top-style: hidden;
-        border-right-style: hidden;
-        border-left-style: hidden;
-        border-bottom-style: groove;
-        width: 40vw;
-        font-size: 18px;
-        background-color: rgb(247, 247, 247);
-    }
-    #inputField:focus {
-        outline: none;
-    }
-    #addButtonContainer {
-        display: inline-block;
-    }
-    .fas:hover {
-        font-size: 19px;
-    }
-    #toDoListParent {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        list-style-type: none;
-        padding: 0 5px 5px 5px;
-    }
-    .far {
-        font-size: 19px;
-    }
-    .far:hover {
-        cursor: pointer;
-        font-size: 22px;
-    }
-    #spanContainer {
-        display: flex;
-        width: 80%;
-        flex-direction: row;
-        justify-content: space-between;
-        max-width: 100%;
-        min-width: 95%;
-        border: 0.5px solid rgba(159, 159, 159, 0.688);
-        background: #f3f6fb;
-        border-radius: 5px;
-        margin-top: 10px;
-        padding: 10px;
-        overflow-wrap: anywhere;
-    }
-    #spanMainEl {
-        display: flex;
-        flex-direction: row;
-    }
-    #spanForButton {
-        display: flex;
-        flex-direction: row;
-    }
-    #editButton {
-        padding-right: 10px;
-    }
-    #clearButton {
-        padding-bottom: 20px;
-    }
-    input[type="checkbox"] {
-        width: 1.4em;
-        height: 1.4em;
-        border: 1px solid #aaa;
-        flex-shrink: 0;
-    }
-    input[type="checkbox"]:checked {
-        color: #888;
-    }
-    #clearAll {
-        cursor: pointer;
-        font-size: 22px;
-    }
-}
-
-
-/*Tablet*/
-
-@media (min-width:768px) {
-    body {
-        font-family: "Lora", serif;
-        background-color: #fefefe;
-        background-image: linear-gradient(#fc6c48 0%, #ef5081 100%);
-    }
-    .parentContainer {
-        display: flex;
-        height: 100vh;
-        flex-direction: column;
-        align-items: center;
-        /* justify-content: center; */
-    }
-    .parentContainer__position {
-        border: 1px solid rgb(255, 255, 255, 0.05);
-        border-radius: 10px;
-        width: 60vw;
-        min-height: 90vh;
-        max-height: 100vh;
-        -webkit-box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.05);
-        box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.05);
-        background-color: rgb(247, 247, 247);
-        overflow-y: auto;
-        /* overflow-y: scroll;
-      overflow-y: thin; */
-    }
-    .titleContainer {
-        text-align: center;
-        font-size: 30px;
-        font-weight: 600;
-    }
-    .currentDate {
-        font-size: 12px;
-        color: #757589;
-        /* padding: 40px 215px 0 0; */
-        font-size: 12px;
-        color: #757589;
-    }
-    .mainContainer {
-        text-align: center;
-        margin-top: 40px;
-        font-size: 18px;
-    }
-    .inputField {
-        border-top-style: hidden;
-        border-right-style: hidden;
-        border-left-style: hidden;
-        border-bottom-style: groove;
-        width: 27vw;
-        font-size: 18px;
-        background-color: rgb(247, 247, 247);
-    }
-    #inputField:focus {
-        outline: none;
-    }
-    #addButtonContainer {
-        display: inline-block;
-    }
-    .fas:hover {
-        font-size: 19px;
-    }
-    #toDoListParent {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        list-style-type: none;
-        padding: 0 5px 5px 5px;
-    }
-    .far {
-        font-size: 19px;
-    }
-    .far:hover {
-        cursor: pointer;
-        font-size: 22px;
-    }
-    #spanContainer {
-        display: flex;
-        width: 80%;
-        flex-direction: row;
-        justify-content: space-between;
-        max-width: 100%;
-        min-width: 95%;
-        border: 0.5px solid rgba(159, 159, 159, 0.688);
-        background: #f3f6fb;
-        border-radius: 5px;
-        margin-top: 10px;
-        padding: 10px;
-        overflow-wrap: anywhere;
-    }
-    #spanMainEl {
-        display: flex;
-        flex-direction: row;
-    }
-    #spanForButton {
-        display: flex;
-        flex-direction: row;
-    }
-    #editButton {
-        padding-right: 10px;
-    }
-    #clearButton {
-        padding-bottom: 20px;
-    }
-    input[type="checkbox"] {
-        width: 1.4em;
-        height: 1.4em;
-        border: 1px solid #aaa;
-        flex-shrink: 0;
-    }
-    input[type="checkbox"]:checked {
-        color: #888;
-    }
-    #clearAll {
-        cursor: pointer;
-        font-size: 22px;
-    }
-}
-
-
-/*laptop*/
+                                                                                            }
+                                                                                            .titleContainer {
+                                                                                                font-size: 20px;
+                                                                                            }
+                                                                                            .currentDate {
+                                                                                                font-size: 12px;
+                                                                                                color: #757589;
+                                                                                                /* padding: 40px 215px 0 0; */
+                                                                                                font-size: 12px;
+                                                                                                color: #757589;
+                                                                                            }
+                                                                                            .inputField {
+                                                                                                font-size: 16px;
+                                                                                                width: 60vw;
+                                                                                            }
+                                                                                            #toDoListParent {
+                                                                                                font-size: 13px;
+                                                                                            }
+                                                                                            .textClearAll {
+                                                                                                font-size: 12px;
+                                                                                            }
+                                                                                        }
+                                                                                        /*Tablet*/
+                                                                                        
+                                                                                        @media (min-width:768px) {
+                                                                                            .inputField {
+                                                                                                width: 27vw;
+                                                                                            }
+                                                                                            /*laptop*/
